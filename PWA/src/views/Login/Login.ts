@@ -11,9 +11,10 @@ export default class Login extends Vue {
   pass: String = "";
 
   login() {
-    let result = Utils.verificarLogin("123", "123");
+    let result = Utils.verificarLogin("bla", "123");
     if (result.sucesso) {
-      this.$emit("showMensagem", "Aviso", "OK");
+      //this.$emit("showMensagem", "Aviso", "OK");
+      this.$router.push("Counter");
     } else {
       this.$emit("showMensagem", "Aviso", result.mensagem);
     }
